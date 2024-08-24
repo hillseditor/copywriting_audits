@@ -1,5 +1,5 @@
-!/.build
-!/backup
-!/common
-!/conf
-!/vol
+/.build
+/backup
+/common
+/conf
+/vol
