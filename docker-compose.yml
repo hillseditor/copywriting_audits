@@ -1,0 +1,44 @@
+# version: '3.8'
+services:
+  web:
+    container_name: copyw
+    hostname: copyw.localhost
+    privileged: true
+    build:
+      context: .
+    environment:
+      - VIRTUAL_HOST=copyw.localhost
+      - VIRTUAL_PROTO=https
+      - VIRTUAL_PORT=443
+      - HTTPS_METHOD=noredirect
+      - www=/var/www/html
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_HOST=copywdb.localhost
+      - DBASE=hillseditor
+    volumes:
+      # Nginx
+      - ./vol/ngx/nginx.conf:/etc/nginx/nginx.conf
+      - ./vol/ngx/conf.d:/etc/nginx/conf.d
+      - ./vol/ngx/snippets/fastcgi-php.conf:/etc/nginx/snippets/fastcgi-php.conf
+      - ./vol/cert:/etc/nginx/certs
+      # PHP
+      - ./vol/php/php.ini:/etc/php.ini
+      - ./vol/php/php-fpm.d/www.conf:/etc/php/8.3/fpm/pool.d/www.conf
+      - ./vol/php/php-fpm.conf:/etc/php/8.3/fpm/php-fpm.conf
+      # web Directory
+      - ./www:/var/www/html
+      # Mnt point
+      - ./vol:/mnt/vol
+      - ./backup:/mnt/backup
+      - ./vol/local/.config:/home/nginx/.config
+    ports:
+      - 80
+      - 443
+    extra_hosts:
+      # - "host.docker.internal:host-gateway"
+      - "hes.localhost:127.0.0.1"
+networks:
+  default:
+    name: hesbridge
