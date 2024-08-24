@@ -61,7 +61,7 @@
 /drupal.phar
 /drupal
 /www/web/themes/contrib/
-www/web/modules/contrib/
+/www/web/modules/contrib/
 
 /.editorconfig
 /.gitattributes
