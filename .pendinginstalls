@@ -1,0 +1,48 @@
+Installed:
+composer require drupal/at_tool 
+composer require drupal/csp 
+composer require drupal/ctools 
+composer require drupal/disable_user_1  
+composer require drupal/easy_breadcrumb   
+composer require drupal/extlink 
+composer require drupal/field_group 
+composer require drupal/fullcalendar_view 
+composer require drupal/google_tag
+composer require drupal/honeypot  
+composer require drupal/http_response_headers 
+composer require drupal/metatag 
+composer require drupal/module_filter  
+composer require drupal/pathauto 
+composer require drupal/permissionspolicy
+composer require drupal/phpmailer_smtp 
+composer require drupal/profile 
+composer require drupal/redirect  
+composer require drupal/reporting 
+composer require drupal/robotstxt 
+composer require drupal/scheduler
+composer require drupal/schema_metatag  
+composer require drupal/structure_sync
+composer require drupal/taxonomy_manager 
+composer require drupal/token
+composer require drupal/toolbar_menu  
+composer require drupal/upgrade_status
+
+Pending:
+composer require drupal/node_view_permissions
+composer require drupal/noreqnewpass 
+composer require drupal/remove_http_headers 
+composer require drupal/search404 
+composer require drupal/seckit   
+composer require drupal/seo_checklist
+composer require drupal/simple_gmap 
+composer require drupal/simple_pass_reset 
+composer require drupal/username_enumeration_prevention
+composer require drupal/xmlsitemap
+
+
+
+
+
+
+
+
