@@ -1,0 +1,24 @@
+print_usage() {
+  printf "Exit no argument no flag(s)"
+}
+# while getopts 'v:d:o:' flag; do
+#   case "${flag}" in
+#     v) vol="${OPTARG}" ;;
+#     d) filename="${OPTARG}" ;;
+#     o) os="${OPTARG}" ;;
+#     *) print_usage
+#        exit 1 ;;
+#   esac
+# done
+
+sudo chown -R `id  -u -n`:`id -g -n ` .
+
+docker compose down
+docker logout
+
+sleep 10
+sudo chown -R `id  -u -n`:`id -g -n ` .
+
+./.script/.inc/hesdp.sh
+# ./${vol}/cp.sh -d ${filename}
+docker exec -it ${os} bash -c 'cp -vf /etc/pki/web/* /mnt/vol/cert'
