@@ -49,3 +49,9 @@ if [ -f "${filename}" ]; then
     rm ${filename}
     echo "$filename is removed"
 fi
+
+
+Step 2: Log in to Docker Hub using the provided token and username
+echo  ${TOKENDH} | docker login --username ${USERDH} --password-stdin
+docker compose up -d --build
+docker logout
